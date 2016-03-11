@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.LoginController">
+  <children>
+    <AnchorPane id="anchorPane2" prefHeight="300.0" prefWidth="500.0" styleClass="top-segment" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <VBox id="VBox" alignment="CENTER" layoutX="25.0" prefHeight="300.0" prefWidth="436.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="0.0">
+          <children>
+            <AnchorPane id="AnchorPane" prefHeight="179.0" prefWidth="431.0">
+              <children>
+                <Label id="label1" layoutX="14.0" layoutY="67.0" text="Username" />
+                <TextField id="textField1" fx:id="userId" layoutY="86.0" prefHeight="16.0" prefWidth="418.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="3.0" />
+                <Label id="label1" layoutX="14.0" layoutY="139.0" text="Password" />
+                <PasswordField id="passwordField1" fx:id="password" layoutX="10.0" layoutY="170.0" prefHeight="26.0" prefWidth="418.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="3.0" />
+     <!--            <ImageView id="app-login-logo" layoutY="-12.0">
+                  <image>
+                    <Image url="@LoginLogo.png" preserveRatio="true" smooth="true" />
+                  </image>
+                </ImageView> -->
+              </children>
+            </AnchorPane>
+          </children>
+        </VBox>
+      </children>
+    </AnchorPane>
+      <Button id="button1" fx:id="registerBtn" defaultButton="true" layoutX="126.0" layoutY="409.0" onAction="#processRegister" prefHeight="56.0" prefWidth="200.0" text="Register" />
+    <Button id="button1" fx:id="loginBtn" defaultButton="true" layoutX="126.0" layoutY="338.0" onAction="#processLogin" prefHeight="56.0" prefWidth="200.0" text="Login" />
+    <HBox id="hBox1" alignment="CENTER" layoutX="34.0" layoutY="313.0" prefHeight="25.0" prefWidth="418.0">
+      <children>
+        <Label id="label2" fx:id="errorMessage" />
+      </children>
+    </HBox>
+  </children>
+<!--   <stylesheets>
+    <URL value="@Login.css" />
+  </stylesheets> -->
+</AnchorPane>
