@@ -32,9 +32,7 @@ public class HomeController extends AnchorPane implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-
 		mainMsg.setText("Welcome!");
-
 	}
 
 	public void createCourse() {

@@ -24,9 +24,10 @@ public class Main extends Application {
 	private final double MINIMUM_WINDOW_WIDTH = 300.0;
 	private final double MINIMUM_WINDOW_HEIGHT = 300.0;
 
-	String registryIP = "localhost";
-	int registryPort = 3000;
-	String remoteObjectName = SMS.class.getSimpleName();
+	static String registryIP = "localhost";
+	static int registryPort = 3000;
+	static String remoteObjectName = SMS.class.getSimpleName();
+
 	ClientController controller = new ClientController(registryIP, registryPort, remoteObjectName);
 
 	public static void main(String[] args) {
@@ -51,8 +52,8 @@ public class Main extends Application {
 		return loggedUser;
 	}
 
-	public boolean userLogging(String userId, String password) {
-		LoginResponse response = controller.verifyUserLogin(userId, password);
+	public boolean userLogging(String username, String password) {
+		LoginResponse response = controller.verifyUserLogin(username, password);
 
 		if (response != null && response.getStatusCode() == 200) {
 			gotoHome();
@@ -92,7 +93,6 @@ public class Main extends Application {
 
 	private void gotoRegister2() {
 		try {
-			System.out.println("GotoRegister");
 			RegisterController register = (RegisterController) replaceSceneContent("Register.fxml");
 			register.setApp(this);
 		} catch (Exception ex) {
@@ -125,10 +125,10 @@ public class Main extends Application {
 		} catch (Exception ex) {
 			Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
 		}
-
 	}
 
 	private Initializable replaceSceneContent(String fxml) throws Exception {
+
 		FXMLLoader loader = new FXMLLoader();
 		InputStream in = Main.class.getResourceAsStream(fxml);
 		loader.setBuilderFactory(new JavaFXBuilderFactory());
@@ -142,8 +142,10 @@ public class Main extends Application {
 		}
 
 		Scene scene = new Scene(page, 800, 600);
+
 		stage.setScene(scene);
 		stage.sizeToScene();
+
 		return (Initializable) loader.getController();
 	}
 

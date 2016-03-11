@@ -40,8 +40,8 @@ public class LoginController extends AnchorPane implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		errorMessage.setText("");
-		userId.setPromptText("demo");
-		password.setPromptText("demo");
+		userId.setPromptText("username");
+		password.setPromptText("password");
 	}
 
 	public void processRegister(ActionEvent event) {

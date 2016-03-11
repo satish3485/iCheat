@@ -29,7 +29,7 @@ public class ClientController {
 			// Search for the reference of name remoteControllerName in the registry of the server
 			remoteController = (Service) registry.lookup(remoteControllerName);
 
-			System.out.println("ClientRMIController connected to registry " + registryIP + " through port " + registryPort + ".");
+			System.out.println("ClientController connected to registry " + registryIP + " through port " + registryPort + ".");
 		} catch (RemoteException | NotBoundException e) {
 			e.printStackTrace();
 		}
@@ -46,8 +46,7 @@ public class ClientController {
 
 	public SignupResponse verifySignupInfo(String username, String password, String confirmPassword, String email) {
 		try {
-			return (SignupResponse) remoteController
-					.send(new SignupRequest(username, password, confirmPassword, email));
+			return (SignupResponse) remoteController.send(new SignupRequest(username, password, confirmPassword, email));
 		} catch (RemoteException e) {
 			// Something went wrong -> show an error message to user!
 			return null;
