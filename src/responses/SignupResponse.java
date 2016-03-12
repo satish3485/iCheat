@@ -1,4 +1,4 @@
-package commonrmi;
+package responses;
 
 import java.util.Map;
 

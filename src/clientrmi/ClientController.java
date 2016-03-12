@@ -4,11 +4,12 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import commonrmi.LoginRequest;
-import commonrmi.LoginResponse;
-import commonrmi.SignupRequest;
-import commonrmi.SignupResponse;
-import serverrmi.Service;
+
+import requests.LoginRequest;
+import requests.SignupRequest;
+import responses.LoginResponse;
+import responses.SignupResponse;
+import serverrmi.services.Service;
 
 public class ClientController {
 

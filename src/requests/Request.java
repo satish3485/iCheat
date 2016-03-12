@@ -1,4 +1,4 @@
-package commonrmi;
+package requests;
 
 import java.io.Serializable;
 

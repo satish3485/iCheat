@@ -10,11 +10,10 @@ import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
-import serverrmi.SMS;
+import responses.LoginResponse;
+import responses.SignupResponse;
+import serverrmi.services.RemoteService;
 import clientrmi.ClientController;
-import commonrmi.LoginResponse;
-import commonrmi.SignupResponse;
 import gui.User;
 
 public class Main extends Application {
@@ -26,7 +25,7 @@ public class Main extends Application {
 
 	static String registryIP = "localhost";
 	static int registryPort = 3000;
-	static String remoteObjectName = SMS.class.getSimpleName();
+	static String remoteObjectName = RemoteService.class.getSimpleName();
 
 	ClientController controller = new ClientController(registryIP, registryPort, remoteObjectName);
 
