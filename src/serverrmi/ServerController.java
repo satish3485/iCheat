@@ -10,9 +10,13 @@ import serverrmi.services.Service;
 
 public class ServerController {
 
-	private Service remoteService;
+	private Service remoteService, stub;
+	private Registry registry;
+	private int registryPort;
 
 	public ServerController(int registryPort) {
+
+		this.registryPort = registryPort;
 
 		System.setProperty("java.security.policy", "file:./server.policy");
 
@@ -21,19 +25,34 @@ public class ServerController {
 		}
 
 		remoteService = new RemoteService();
-		
+
 		try {
-			Service stub = (Service) UnicastRemoteObject.exportObject(remoteService, registryPort);
-
-			Registry registry = LocateRegistry.createRegistry(registryPort);
-
+			stub = (Service) UnicastRemoteObject.exportObject(remoteService, registryPort);
+			registry = LocateRegistry.createRegistry(registryPort);
 			registry.rebind(RemoteService.class.getSimpleName(), stub);
-
 			System.out.println("Server and registry running. Registry at port " + registryPort + ".");
 
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
+	}
+
+	/* GETTERS */
+
+	public int getRegistryPort() {
+		return registryPort;
+	}
+
+	public Service getRemoteService() {
+		return remoteService;
+	}
+
+	public Service getStub() {
+		return stub;
+	}
+
+	public Registry getRegistry() {
+		return registry;
 	}
 
 }

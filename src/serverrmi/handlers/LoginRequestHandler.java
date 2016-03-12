@@ -18,11 +18,13 @@ public class LoginRequestHandler implements RequestHandler {
 		if (lr.getUserName().equals("root") && lr.getPassword().equals("root")) {
 
 			return new LoginResponse();
+			
 		} else {
 			Map<String, Object> data = new HashMap<>();
 			data.put("Description", "User " + lr.getUserName() + " not found");
 			return new LoginResponse(404, data);
 		}
+		
 	}
 
 }

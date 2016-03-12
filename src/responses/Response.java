@@ -14,6 +14,7 @@ public abstract class Response implements Serializable {
 	private static final long serialVersionUID = -1141059146727857444L;
 
 	Map<String, Object> data;
+	
 	int statusCode;
 
 	public Response() {

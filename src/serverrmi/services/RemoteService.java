@@ -35,8 +35,9 @@ public class RemoteService implements Service {
 		table.put(LoginRequest.class.getSimpleName(), new LoginRequestHandler());
 		table.put(SignupRequest.class.getSimpleName(), new SignupRequestHandler());
 		table.put(CreateCourseRequest.class.getSimpleName(), new CreateCourseRequestHandler());
-		table.put(EditProfileRequest.class.getSimpleName(), new EditProfileRequestHandler());
+		table.put(EditProfileRequest.class.getSimpleName(), new EditProfileRequestHandler());		
 		table.put(ShowProfileRequest.class.getSimpleName(), new ShowProfileRequestHandler());
+		
 		
 	}
 

@@ -24,7 +24,7 @@ public class Main extends Application {
 	private final double MINIMUM_WINDOW_HEIGHT = 300.0;
 
 	static String registryIP = "localhost";
-	static int registryPort = 3000;
+	static int registryPort = 1099;
 	static String remoteObjectName = RemoteService.class.getSimpleName();
 
 	ClientController controller = new ClientController(registryIP, registryPort, remoteObjectName);
